@@ -1,12 +1,10 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-import { TwoService } from './two/two.service';
 
 @Controller()
 export class AppController {
   constructor(
     private readonly appService: AppService,
-    private twoService: TwoService,
   ){}
 
   @Get()
@@ -17,6 +15,12 @@ export class AppController {
   @Get('bringTwo')
   bringTwo(){
     console.log('app : bringTwo');
-    this.twoService.two();
+    this.appService.two();
+  }
+
+  @Get('bringOne')
+  bringOne(){
+    console.log('app : bringOne');
+    this.appService.one();
   }
 }

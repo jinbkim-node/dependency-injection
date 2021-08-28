@@ -1,9 +1,9 @@
 # Nest dependency-injection 예제
 
 ## 의존성 주입
-- src/one/one.controller.ts -> AppService
-- src/two/two.controller.ts -> OneService
-- src/app.controller.ts -> TwoService
+- src/one/one.service.ts -> AppService, TwoService
+- src/two/two.service.ts -> AppService, OneService
+- src/app.service.ts -> OneService, TwoService
 
 ## 기술스택
 - NodeJS
